@@ -19,6 +19,20 @@ class Restaurant():
         """Adds inc to the number of served guests"""
         self.number_served += inc
 
+class IcecreamStand(Restaurant):
+    """My first class had a baby"""
+    def __init__(self,name,style, number_served=0):
+        super().__init__(name,style, number_served=0)
+        self.flavours=['vanilla','chocholate','indica','sativa']
+
+    def get_flavours(self):
+        print("Our flavours are:")
+        i=1
+        for flavour in self.flavours:
+            print(i,".",flavour.title())
+            i+=1
+
+
 rest1 = Restaurant('Chong Li\'s dog chop','Chinese')
 rest2 = Restaurant('Oves grill','Mosbricka')
 rest3 = Restaurant('Pacos MexMix','Texican')
@@ -32,3 +46,7 @@ rest2.open_restaurant()
 rest3.describe()
 rest3.open_restaurant()
 
+icestand1 = IcecreamStand('Cheech and Chongs icecream van','herbal')
+icestand1.describe()
+icestand1.get_flavours()
+icestand1.open_restaurant()

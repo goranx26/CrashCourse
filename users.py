@@ -1,6 +1,5 @@
     
 class User():
-
     def __init__(self, first_name,last_name,login_name,title):
         self.first_name = first_name
         self.last_name = last_name
@@ -23,12 +22,28 @@ class User():
     def reset_login_attempts(self):
         self.login_attempts = 0
 
+class Admin(User):
+    def __init__(self,first_name,last_name,login_name,title):
+        super().__init__(first_name,last_name,login_name,title)
+        self.privileges=['can add post', 'can delete post', 'can ban user']
+    
+    def show_privileges(self):
+        print(self.first_name.title(), "'s admin privileges: ")
+        i=1
+        for priv in self.privileges:
+            print(str(i),".",priv)
+            i+=1
 
-goran = User('goran','andersson','root','unethical hacker')
+#add a user and test its methods
+yngve_stoor = User('yngve', 'stoor', 'yngve.stoor', 'IT-miffo')
+yngve_stoor.greet_user()
+yngve_stoor.describe_user()
 
+#add an admin and test the methods
+goran = Admin('goran','andersson','root','unethical hacker')
 goran.greet_user()
-
 goran.describe_user()
+goran.show_privileges()
 
 i=1
 while i<10:
