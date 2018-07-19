@@ -1,0 +1,16 @@
+from car import Car
+print('New car: ')
+my_new_car = Car('ford', 'mustang', 2019)
+print(my_new_car.get_descriptive_name())
+my_new_car.update_odometer(666)
+my_new_car.read_odometer()
+
+print('\nUsed car: ')
+my_used_car = Car('opel', 'ascona', 1980)
+print(my_used_car.get_descriptive_name())
+my_used_car.update_odometer(2000)
+my_used_car.update_odometer(500)
+my_used_car.read_odometer()
+print("Incrementing miles")
+my_used_car.increment_odometer(500)
+my_used_car.read_odometer()
