@@ -25,11 +25,25 @@ def get_new_username():
 def greet_user():
     """Greet the user by name."""
     username = get_stored_username()
+
     if username:
-        print('Welcome back ' + username + '!')
+        correct = input("Is this you? Username: " + username + "\nY/N\n")
+        while True:
+            if correct.lower() == 'y':
+                print('Welcome back ' + username + '!')
+                break
+            elif correct.lower() == 'n':
+                get_new_username()
+                print("We will remember you when you get back " + username + '!')
+                break
+            else:
+                correct = input('Please type y or n.')
+
+
     else:
         username = get_new_username()
         print("We will remember you when you get back " + username + '!')
+
 
 
 greet_user()
