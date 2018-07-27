@@ -7,9 +7,13 @@ class Employee():
         self.lname = lname
         self.salary = salary
 
-    def give_raise(self, payraise='5000'):
+    def give_raise(self):
         """Raises the salary (standard raise = $5000)"""
+        self.salary += 5000
+
+    def give_custom_raise(self, payraise):
         self.salary += payraise
+
 
 
 

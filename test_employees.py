@@ -6,7 +6,10 @@ class TestEmployees(unittest.TestCase):
     """Tests for employees.py"""
 
     def SetUp(self):
-        self.test_dude = Employee('Test', 'Dude', 5000)
+        fname = 'Test'
+        lname = 'Dude'
+        salary = 5000
+        self.test_dude = Employee(fname, lname, salary)
 
     def test_give_default_raise(self):
         self.test_dude.give_raise()
