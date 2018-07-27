@@ -1,4 +1,3 @@
 def country_info(city, country):
-    presentation = (city.title() + ', ' + country.title())
-    print(presentation)
-
+    presentation = city + ', ' + country
+    return presentation.title()
